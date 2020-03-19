@@ -1,0 +1,12 @@
+All code must be inside a class.
+Before java variable can be used, they must be declared.
+All variables and expressions have a static type. 
+- Java variables must have a specific type.
+- Java variables type can never be changed.
+- Type are verified before the code runs.
+- The compiler ensures that all types are compatible.
+Functions
+- Functions must be declared as a part of a class and are called as a method.
+- Define a function as: public static.
+- All parameters and the return value mush have a declared type.
+- Functions in Java only return one value.
