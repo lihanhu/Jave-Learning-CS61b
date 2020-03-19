@@ -10,3 +10,17 @@ Functions
 - Define a function as: public static.
 - All parameters and the return value mush have a declared type.
 - Functions in Java only return one value.
+Array
+- int[] numbers = new int [3];
+- numbers[0] = 1;
+- numbers[1] = 2;
+- numbers[2] = 5;
+For loop
+for(initialization; termination; increment){
+...
+}
+Enhanced For loop
+String[] a = {'cat', 'dog', 'horse'};
+for (String s : a){
+...
+}
