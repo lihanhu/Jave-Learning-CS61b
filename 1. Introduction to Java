@@ -38,3 +38,6 @@ git - github
 - git commit -m 'complete part1'
 - git push -u orgin master -f #Pushes the most recent copy of your files to the remote-repo-name
 #push the new file into github
+
+Part 2: Objects
+Not all class has main.
