@@ -25,6 +25,9 @@ for (String s : a){
 ...
 }
 
+git bash
+- vi hello.java #edit hello.java, press 'I' to edit, press 'esc' to exit edit mode, enter ':wq' to go back to command line
+
 git - github
 - git clone https://github.com/lihanhu/cs61b #paste the repo to the current path
 - git remote add skeleton https://github.com/Berkeley-CS61B/skeleton-sp19.git
