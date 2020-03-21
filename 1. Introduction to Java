@@ -41,3 +41,16 @@ git - github
 
 Part 2: Objects
 Not all class has main.
+Create an array of objects:
+- Use the new keyword to create the array
+- Use new again for each object that you want to put into the array
+Dog[] dogs = new Dog[2];
+Dog[0] = new Dog(8);
+Dog[1] = new Dog(20);
+Dog[0].makeNoise();
+
+Static vs Non-Static(instance) method
+- Static methods are invoked by Class name #Dog.makenoise()
+- Static methods cannot use 'my' instance variables
+- Instance methods are invoked by an instance name #mayadog.makenoise()
+
