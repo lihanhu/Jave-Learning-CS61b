@@ -24,3 +24,14 @@ String[] a = {'cat', 'dog', 'horse'};
 for (String s : a){
 ...
 }
+
+git - github
+- git clone https://github.com/lihanhu/cs61b #paste the repo to the current path
+- git remote add skeleton https://github.com/Berkeley-CS61B/skeleton-sp19.git
+- git pull skeleton master or git pull --rebase --allow-unrelated-histories skeleton master #Get the most recent copy of the files as seen in remote-repo-name
+#The repo in Berkeley has been copied.
+- mv D:/hello.txt hello.txt #move file from another path to current location, '/' instead of '\'
+- git add hello.txt
+- git commit -m 'complete part1'
+- git push -u orgin master -f #Pushes the most recent copy of your files to the remote-repo-name
+#push the new file into github
