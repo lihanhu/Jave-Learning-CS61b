@@ -54,3 +54,5 @@ Static vs Non-Static(instance) method
 - Static methods cannot use 'my' instance variables
 - Instance methods are invoked by an instance name #mayadog.makenoise()
 
+public static void main(String[] args)
+- main is called by the Java interpreter instead of another Java class. So, the interpreter will provide the arguments. Such as, java Hello arg1 arg2
