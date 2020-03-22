@@ -58,3 +58,21 @@ Static vs Non-Static(instance) method
 
 public static void main(String[] args)
 - main is called by the Java interpreter instead of another Java class. So, the interpreter will provide the arguments. Such as, java Hello arg1 arg2
+
+Constructor
+# https://sp19.datastructur.es/materials/proj/proj0/proj0#im-having-trouble-with-the-second-body-constructor-the-one-that-takes-in-another-body-as-its-only-argument
+- A constructor is a block of code that runs when a class is instantiated with the new keyword. 
+- Constructors serve the purpose of initializing a new object’s fields. Consider an example below:
+public class Dog {
+    String _name;
+    String _breed;
+    int _age;
+
+    public Dog(String name, String breed, int age) {
+        _name = name;
+        _breed = breed;
+        _age = age;
+    }
+}
+- The Dog class has three non-static fields. Each instance of the Dog class can have a name, a breed, and an age. 
+- Our simple constructor, which takes three arguments, initializes these fields for all new Dog objects.
