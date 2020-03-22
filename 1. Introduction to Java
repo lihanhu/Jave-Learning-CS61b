@@ -38,6 +38,8 @@ git - github
 - git commit -m 'complete part1'
 - git push -u orgin master -f #Pushes the most recent copy of your files to the remote-repo-name
 #push the new file into github
+- git remote set-url orgin https://github.com/lihanhu/cs61b.git #change the remote git to my own git
+-  git push -u origin master #push my new code to github
 
 Part 2: Objects
 Not all class has main.
