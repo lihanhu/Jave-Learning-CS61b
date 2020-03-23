@@ -1,0 +1,39 @@
+2.1 Mystery of the Walrus
+How the computer store information in memory?
+- Information is stored in memory as a sequence of 0 and 1.
+- Different Jave types have different ways to interprete it. So, 'H' and '72' can have the same 0, 1 sequence.
+- 8 primitive Java types: byte, short, int, long, float, double, boolean, char.
+
+When we declare a variable of a certain type in Java. 
+- The computer will set aside enough bits (a box of bits) based on the type of data. And there are no default values.
+For example, "int x" --- set aside 32 bits for x. "float y" --- set aside 64 bits for y.
+- Java creates an internal table mapping a variable's name to the location of the first bit in the box.
+When we assign value to a variable.
+- The reserved bits are filled with a sequence of 0 and 1.
+
+The golden rule of equals.
+Given variables y and x.
+- y = x copies all the bits from x into y.
+This is true for any assignment using "=".
+
+Primitive types vs Reference types
+- Primitive types: byte, short, int, long, float, double, boolean, char.
+- Reference types: everything else, including array.
+
+Class Instantiations: new dog, new planet, etc.
+When we instantiate an Object(e.g. Dog, Walrus, Planet):
+- Java first allocates a box of bits for each instance variable of the class and fills them with a default value(e.g.0, null).
+- The constructor then fills every such box with some other value.
+- We can think of "new" as returning the number of bit in memory where it puts the walrus.
+public static class Walrus {
+      public int weight;
+      public double tusksize;
+      public Walrus(int w, double ts) {
+      weight = w;
+      tusksize = ts;
+      }
+}
+Declaration
+When we declara a reference variable
+- Java allocates a box of 64 bits
+- These bits can be either set to: Null(all 0); 64 bits "address" of a specific instance of that class(returned by new)
