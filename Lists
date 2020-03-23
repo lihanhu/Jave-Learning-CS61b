@@ -36,4 +36,15 @@ public static class Walrus {
 Declaration
 When we declara a reference variable
 - Java allocates a box of 64 bits
-- These bits can be either set to: Null(all 0); 64 bits "address" of a specific instance of that class(returned by new)
+- These bits can be either set to: 
+(1) Null(all 0)
+Walrus someWalrus;
+someWalrus = null;
+(2) 64 bits "address" of a specific instance of that class(returned by new)
+Walrus someWalrus;
+someWalrus = new Walrus(1000, 8.3);
+e.g.
+Walrus a; #create a box of 64 bits
+a = new Walrus(1000, 8.3); #The new keyword goes out to memory, finds the 96 bits it needs, and shouts the location. Then a stores the location.
+Walrus b;
+b = a; #copy the 64 bits in a into b, b and a point to the same object
