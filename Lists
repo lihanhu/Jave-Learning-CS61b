@@ -17,13 +17,18 @@ Given variables y and x.
 This is true for any assignment using "=".
 
 Primitive types vs Reference types
+In box-and-pointer notation, each variable is drawn as a labeled box and values are shown in the box. 
+For primitive variables, the value is represented by the value not the adress. 
+- For example, a = 5 means "a" stores the binary represence of 5 not the address of 5.
+For reference variables, addresses are represented by arrows to specific object instances.
 - Primitive types: byte, short, int, long, float, double, boolean, char.
-- Reference types: everything else, including array.
+- Reference types: everything else, including array. References to objects(an arrow). References may be null.
 
-Class Instantiations: new dog, new planet, etc.
+“new" Class Instantiations: new dog, new planet, etc.
 When we instantiate an Object(e.g. Dog, Walrus, Planet):
+new Walrus(1000, 8.3); #end up with a Walrus consisting of two boxes of 32 and 64 bits respectively, but the object is not stored
 - Java first allocates a box of bits for each instance variable of the class and fills them with a default value(e.g.0, null).
-- The constructor then fills every such box with some other value.
+- The constructor then fills every such box with some other value(but not necessary).
 - We can think of "new" as returning the number of bit in memory where it puts the walrus.
 public static class Walrus {
       public int weight;
@@ -33,18 +38,42 @@ public static class Walrus {
       tusksize = ts;
       }
 }
-Declaration
+
+Reference Variables Declaration
 When we declara a reference variable
 - Java allocates a box of 64 bits
 - These bits can be either set to: 
 (1) Null(all 0)
-Walrus someWalrus;
+Walrus someWalrus; #create a box of 64 bits
 someWalrus = null;
 (2) 64 bits "address" of a specific instance of that class(returned by new)
 Walrus someWalrus;
-someWalrus = new Walrus(1000, 8.3);
+someWalrus = new Walrus(1000, 8.3); 
+#creates a new Walrus, and the address is returned by the new operator. These bits are copied into the someWalrus box based on the GRoE.
 e.g.
 Walrus a; #create a box of 64 bits
-a = new Walrus(1000, 8.3); #The new keyword goes out to memory, finds the 96 bits it needs, and shouts the location. Then a stores the location.
+a = new Walrus(1000, 8.3); 
+#The new keyword goes out to memory, finds the 96 bits it needs, and shouts the location. Then "a" stores the location.
 Walrus b;
 b = a; #copy the 64 bits in a into b, b and a point to the same object
+
+Parameters Passing - Pass by value
+Passing parameters obeys the same rule: Simply copy the bits to the new scope.
+public static double average(double a, double b){
+      return (a + b) / 2;
+public static void main(String[] args){
+      double x = 5.5;
+      double y = 10.5;
+      double avg = average(x + y)
+}
+main: x = 5.5; y = 10.5
+average: a = 5.5; b = 10.5
+
+Instantiation of Arrary
+int[] a;
+#Declaration: create a 64 bit box for storing a reference to an int array(the address).
+new int[]{0, 1, 2, 95, 4};
+#Instantiation: instantiates a new Object. Create 5 boxes, each of size 32. And put 0, 1, 2, 95, 4 into each box. "new" return the address of this object.
+int[] a = new int[]{0, 1, 2, 95, 4};
+#assignment: put the address of this new Object into the 64 bits box named "a".
+#Instantiated objects can be lost. If we reassign "a" to something else, the original Object cannot come back.
